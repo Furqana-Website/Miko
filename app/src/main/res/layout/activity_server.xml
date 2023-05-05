@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_server"
+    android:layout_width="wrap_content"
+    android:layout_height="300dp"
+    android:background="#87CEEB"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/relative"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/idIVQrcode"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/LinearLayout02"
+        android:layout_below="@+id/relative"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:weightSum="4"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <Button
+            android:id="@+id/start_server"
+            android:layout_margin="2dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative"
+            android:onClick="onClick"
+            android:text="Start Server" />
+        <Button
+            android:id="@+id/vibrate"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start_server"
+            android:onClick="onClick"
+            android:text="Vibrate" />
+        <Button
+            android:id="@+id/heartbeat"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vibrate"
+            android:onClick="onClick"
+            android:text="Heartbeat" />
+        <Button
+            android:id="@+id/sendmessage"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:layout_margin="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Send/Receive" />
+    </LinearLayout>
+    </RelativeLayout>
+  <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/message"
+      android:visibility="gone"
+      android:layout_below="@+id/LinearLayout02">
+
+
+      <ScrollView
+          android:id="@+id/scrool"
+          android:background="@drawable/chat"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_above="@+id/send_data"
+          android:layout_alignParentTop="true"
+          tools:ignore="NotSibling">
+
+          <LinearLayout
+              android:id="@+id/msgList"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+          </LinearLayout>
+
+      </ScrollView>
+
+      <EditText
+          android:id="@+id/edMessage"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/scrool"
+          android:text="Message To Server"
+          tools:ignore="NotSibling" />
+    <Button
+        android:id="@+id/send_data"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/edMessage"
+        android:onClick="onClick"
+        android:background="@drawable/ic_baseline_send_24"
+        android:textColor="@android:color/white" />
+  </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/vibratephone"
+        android:layout_below="@+id/LinearLayout02"
+        android:visibility="gone"
+        android:background="@drawable/mobile"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:weightSum="3"
+            android:id="@+id/l1"
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+            <Button
+                android:id="@+id/vibrate1"
+                android:layout_margin="2dp"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="Vibarte Pattern 1" />
+            <Button
+                android:id="@+id/vibrate2"
+                android:layout_weight="1"
+                android:layout_margin="2dp"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/start_server"
+                android:onClick="onClick"
+                android:text="Vibrate Pattern2" />
+            <Button
+                android:id="@+id/vibrate3"
+                android:layout_weight="1"
+                android:layout_margin="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vibrate"
+                android:onClick="onClick"
+                android:text="Vibrate patter3" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:weightSum="3"
+            android:layout_below="@+id/l1"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <Button
+                android:id="@+id/stop"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vibrate"
+                android:layout_marginStart="210dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:padding="10dp"
+                android:text="Stop" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/heatrate"
+        android:layout_below="@+id/LinearLayout02"
+        android:visibility="gone"
+        android:background="@color/black"
+        android:layout_height="match_parent">
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/serverrelative"
+        android:layout_below="@+id/LinearLayout02"
+        android:visibility="visible"
+        android:background="@drawable/connect"
+        android:layout_height="match_parent">
+
+
+    </RelativeLayout>
+</RelativeLayout>
+
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/activity_server"-->
+<!--    android:layout_width="600dp"-->
+<!--    android:layout_height="300dp"-->
+<!--    android:orientation="vertical"-->
+<!--    android:padding="20dp">-->
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:id="@+id/relative"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        <ImageView-->
+<!--            android:id="@+id/idIVQrcode"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_centerHorizontal="true" />-->
+<!--    </RelativeLayout>-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/LinearLayout02"-->
+<!--        android:weightSum="3"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_width="match_parent">-->
+<!--    <Button-->
+<!--        android:id="@+id/start_server"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/relative"-->
+<!--        android:onClick="onClick"-->
+<!--        android:text="Start Server" />-->
+<!--    <Button-->
+<!--        android:id="@+id/vibrate"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/start_server"-->
+<!--        android:onClick="onClick"-->
+<!--        android:text="Vibrate" />-->
+<!--    <Button-->
+<!--        android:id="@+id/heartbeat"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/vibrate"-->
+<!--        android:onClick="onClick"-->
+<!--        android:text="Heartbeat" />-->
+<!--    </LinearLayout>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/edMessage"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/heartbeat"-->
+<!--        android:text="Message To Server"-->
+<!--        tools:ignore="NotSibling" />-->
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_above="@+id/send_data">-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/msgList"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+<!--        </LinearLayout>-->
+
+<!--    </ScrollView>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/send_data"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/LinearLayout02"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginTop="164dp"-->
+<!--        android:onClick="onClick"-->
+<!--        android:text="Send Message to Client"-->
+<!--        android:textColor="@android:color/white" />-->
+
+<!--</RelativeLayout>-->
