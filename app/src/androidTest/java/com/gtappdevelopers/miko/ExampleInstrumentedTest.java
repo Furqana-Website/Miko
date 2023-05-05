@@ -1,4 +1,4 @@
-package com.gtappdevelopers.firebasestorageimage;
+package com.gtappdevelopers.miko;
 
 import android.content.Context;
 

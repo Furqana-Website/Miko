@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GFG App</string>
+    <string name="app_name">Miko App</string>
     <string name="qr_code">qr_code</string>
     <string name="enter_your_info">Enter your info</string>
     <string name="generate_qr_code">Generate QR Code</string>
